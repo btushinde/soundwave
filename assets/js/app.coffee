@@ -4,12 +4,12 @@ define [
   'angular-animate'
   'modernizr'
   'bower-foundation'
+  'soundcloud'
 ], (angularAMD) ->
   app = angular.module('bodybar', ['ngRoute', 'ngAnimate'])
 
   # Configure Angular ngApp with route and cache the needed providers
   app.config ['$routeProvider', '$locationProvider', ($routeProvider, $locationProvider) ->
-    $(document).foundation()
 
     $locationProvider.html5Mode true
 

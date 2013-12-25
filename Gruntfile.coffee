@@ -116,7 +116,7 @@ module.exports = (grunt) ->
         force: true
       js:       [ config.build + '/js' ]
       css:      [ config.build + '/css' ]
-      images:   [ 'build/img']
+      images:   [ 'build/img' ]
       views:    [ config.build + '/pages', config.build + '/templates', config.build + '/index.html']
       build:    [ config.build ]
 
@@ -156,10 +156,10 @@ module.exports = (grunt) ->
 
 
   # TASKS
-  grunt.registerTask  'server',         ['connect:server']
-  grunt.registerTask  'clean-assets',   ['concurrent:clean']
-  grunt.registerTask  'lint',           ['coffeelint:app']
-  grunt.registerTask  'build',          ['clean-assets', 'lint', 'concurrent:build', 'bower', 'copy']
-  grunt.registerTask  'dev',            ['notify_hooks', 'build', 'concurrent:dev']
-  grunt.registerTask  'default',        ['dev']
-  grunt.registerTask 'heroku:development', ['build']
+  grunt.registerTask  'server',               ['connect:server']
+  grunt.registerTask  'clean-assets',         ['concurrent:clean']
+  grunt.registerTask  'lint',                 ['coffeelint:app']
+  grunt.registerTask  'build',                ['clean-assets', 'lint', 'concurrent:build', 'bower', 'copy']
+  grunt.registerTask  'dev',                  ['notify_hooks', 'build', 'concurrent:dev']
+  grunt.registerTask  'default',              ['dev']
+  grunt.registerTask  'heroku:development',   ['build']

@@ -5,6 +5,8 @@ require.config
   paths:
     ngload:                 'ngload'
     HomeCtrl:               'controllers/homeCtrl'
+    soundcloud:             'http://connect.soundcloud.com/sdk'
+    soundcloudAPI:          'services/soundcloudAPI'
 
   # Add angular modules that does not support
   # AMD out of the box, put it in a shim

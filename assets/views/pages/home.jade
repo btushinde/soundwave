@@ -1,1 +1,12 @@
-h1 Home!
+
+header
+  a(ng-href='{{user.permalink_url}}', target='_blank')
+    img(ng-src='{{user.avatar_url}}')
+
+  label
+    | Followers:
+    | <strong>{{user.followers_count}}</strong>
+  label
+    | Following:
+    | <strong>{{user.followings_count}}</strong>
+
