@@ -1,17 +1,21 @@
 
 header.row
-  a(ng-href='{{user.permalink_url}}', target='_blank')
-    img(ng-src='{{user.avatar_url}}')
-
-  label
-    | Followers:
-    | <strong>{{user.followers_count}}</strong>
-  label
-    | Following:
-    | <strong>{{user.followings_count}}</strong>
+  .profile.large-2.columns
+    a(ng-href='{{user.permalink_url}}', target='_blank')
+      img(ng-src='{{user.avatar_url}}')
+  .meta.large-10.columns
+    label
+      | Followers:
+      | <strong>{{user.followers_count}}</strong>
+    label
+      | Following:
+      | <strong>{{user.followings_count}}</strong>
 
 .row
-  ul.large-block-grid-5
+  ul.likes.large-block-grid-5
     li(ng-repeat='like in likes')
-      .panel {{like.title}}
+      .panel
+        img(ng-src='{{like.artwork_url}}')
+        h2 {{like.title}}
+
 

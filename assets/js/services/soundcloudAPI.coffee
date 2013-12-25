@@ -21,6 +21,7 @@ define [
         SC.get "/users/7624310/favorites",
           limit: 40
         , (data) ->
+          console.log data
           deferred.resolve data
         deferred.promise
 
