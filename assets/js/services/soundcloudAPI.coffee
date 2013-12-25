@@ -4,8 +4,9 @@ define [
 ], (app, soundcloud) ->
   app.register.service 'soundcloudAPI',
     class SoundcloudAPI
-
-      constructor: ->
+      @$inject = ['$q']
+      constructor: (@q) ->
+        console.log @q
         SC.initialize
           client_id:    'c30798df2de8d56a188158c893818d87'
           redirect_uri: 'http://localhost:5000/callback.html'
@@ -16,8 +17,11 @@ define [
             console.log me
 
       getLikes: ->
-        SC.get "/me",
-          limit: 1
-        , (tracks) ->
-          console.log tracks
+        deferred = @q.defer()
+        SC.get "/users/7624310/favorites",
+          limit: 40
+        , (data) ->
+          deferred.resolve data
+        deferred.promise
+
 

@@ -10,6 +10,9 @@ define [
     '$timeout'
     'soundcloudAPI'
     ($scope, $window, $rootScope, $timeout, SC) ->
+
+      SC.getLikes().then (data)->
+        $scope.likes = data
       $scope.user =
         avatar_url:                 "https://i1.sndcdn.com/avatars-000053215000-773s90-large.jpg?d53bf9f"
         city:                       "Raleigh"
