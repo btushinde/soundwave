@@ -16,7 +16,9 @@ header.row
     li(ng-repeat='like in likes')
       .panel
         img(ng-src='{{like.artwork_url}}')
+
       .info
+        span.artist.label.alert {{like.user.username}}
         h2 {{like.title}}
 
 

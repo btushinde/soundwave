@@ -10,34 +10,37 @@ header
   .meta
     margin-top: 50px
 
-
 .likes
   li
     margin-bottom: -20px
     position: relative
+    opacity: 0.6
+
+    &:hover
+      opacity: 1
+      .info
+        opacity: 1
   img
     width: 100%
-
   h2
-    font-weight: 400
-    text-align: center
-    font-size: 1em
+    font-weight: 700
+    font-size: 0.9em
 
   .panel
     height: 190px
     padding: 0
-
-  .info
-    width: 100%
-    height: 100%
-    background: rgba(255,255,255,0.5)
-    padding: 20px
+  .artist
     position: absolute
-    top: 0
+    top: -26px
     left: 0
-
-
-
+    font-size: 1em
+  .info
+    position: absolute
+    top: 70px
+    width: 100%
+    background: rgba(255,255,255,0.8)
+    padding: 5px
+    opacity: 0
 
 
 // Additional Global Styles
