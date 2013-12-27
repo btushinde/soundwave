@@ -3,7 +3,7 @@ header.row
   .profile.large-2.columns
     a(ng-href='{{user.permalink_url}}', target='_blank')
       img(ng-src='{{user.avatar_url}}')
-  .meta.large-10.columns
+  .meta.large-2.columns
     label
       | Followers:
       | <strong>{{user.followers_count}}</strong>
@@ -11,14 +11,22 @@ header.row
       | Following:
       | <strong>{{user.followings_count}}</strong>
 
+  ul.pagination.large-8.columns
+    li.arrow.unavailable
+      a(href='') «
+    li(ng-repeat='page in pages', ng-class='{current: page.active}')
+      a(ng-click='changePage(page)') {{page.id}}
+    li.arrow
+      a(href='') »
+
 .row
-  ul.likes.large-block-grid-5
-    li(ng-repeat='like in likes')
+  ul.likes.large-block-grid-4
+    li(ng-repeat='like in likes | limitTo: 8')
       .panel
         img(ng-src='{{like.artwork_url}}')
 
       .info
-        span.artist.label.alert {{like.user.username}}
+        span.artist.label {{like.user.username}}
         h2 {{like.title}}
 
 

@@ -5,6 +5,7 @@ define [
   'modernizr'
   'bower-foundation'
   'soundcloud'
+  'underscore'
 ], (angularAMD) ->
   app = angular.module('bodybar', ['ngRoute', 'ngAnimate'])
 
